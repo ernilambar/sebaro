@@ -1,5 +1,5 @@
 <script>
-  import Author from "../components/Author.svelte";
+	import Author from '../components/Author.svelte';
 	import '../app.css';
 </script>
 
