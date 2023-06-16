@@ -1,4 +1,5 @@
 <script>
+  import Author from "../components/Author.svelte";
 	import '../app.css';
 </script>
 
@@ -14,7 +15,7 @@
 				</nav>
 			</header>
 
-			<div>author box</div>
+			<Author />
 
 			<slot />
 		</div>
