@@ -1,3 +1,7 @@
+<script>
+	import Social from './Social.svelte';
+</script>
+
 <div class="author">
 	<div class="author-content">
 		<div class="author-avatar">
@@ -7,6 +11,7 @@
 	<div class="author-details">
 		<h2 class="author-name">Nilambar Sharma</h2>
 		<span class="author-position">Software Developer</span>
+		<Social />
 	</div>
 	<div class="author-footer">
 		<ul class="author-footer-links">
