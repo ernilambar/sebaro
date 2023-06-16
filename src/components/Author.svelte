@@ -28,17 +28,16 @@
 		background-color: #fff;
 		text-align: center;
 		box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.08);
-
 	}
-  .author-avatar {
-    clip-path: polygon(100% 0, 100% 88%, 50% 100%, 0 88%, 0 0);
-    border-radius: 4px;
-    overflow: hidden;
+	.author-avatar {
+		clip-path: polygon(100% 0, 100% 88%, 50% 100%, 0 88%, 0 0);
+		border-radius: 4px;
+		overflow: hidden;
 
-    img {
-      display: block;
-      width: 100%;
-      max-width: 100%;
-    }
-  }
+		img {
+			display: block;
+			width: 100%;
+			max-width: 100%;
+		}
+	}
 </style>
