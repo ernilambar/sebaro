@@ -1,18 +1,21 @@
 <div class="author">
 	<div class="author-content">
 		<div class="author-avatar">
-			<img
-				src="https://via.placeholder.com/800x600.png?text=Avatar"
-				alt="avatar"
-				class="w-full block max-w-full"
-			/>
+			<img src="./images/avatar.jpeg" alt="avatar" />
 		</div>
 
 		<div>
-			<div class="p-10">
-				<h2 class="m-0 text-3xl">Nilambar Sharma</h2>
-				<span class="m-0 text-base text-sky-600">Software Developer</span>
+			<div class="author-details">
+				<h2 class="author-name">Nilambar Sharma</h2>
+				<span class="author-position">Software Developer</span>
 			</div>
+		</div>
+
+		<div class="author-footer">
+			<ul class="author-footer-links">
+				<li><a href="/">Home</a></li>
+				<li><a href="/contact">Contact</a></li>
+			</ul>
 		</div>
 	</div>
 </div>
@@ -29,6 +32,7 @@
 		text-align: center;
 		box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.08);
 	}
+
 	.author-avatar {
 		clip-path: polygon(100% 0, 100% 88%, 50% 100%, 0 88%, 0 0);
 		border-radius: 4px;
@@ -38,6 +42,67 @@
 			display: block;
 			width: 100%;
 			max-width: 100%;
+		}
+	}
+
+	.author-details {
+		padding-block: 32px;
+	}
+
+	.author-name,
+	.author-position {
+		margin: 0;
+		font-weight: 400;
+	}
+
+	.author-name {
+		font-size: 34px;
+	}
+
+	.author-position {
+		margin-block-start: 4px;
+		font-size: 16px;
+		color: #2a65e6;
+		border: 1px solid transparent;
+	}
+
+	.author-social-links {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 16px;
+		padding: 0;
+		margin: 24px 0 0;
+		list-style: none;
+
+		svg {
+			display: block;
+			width: 16px;
+			height: auto;
+		}
+	}
+
+	.author-footer-links {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		padding: 0;
+		margin: 0;
+		list-style: none;
+		border-top: 1px solid #e3e3e3;
+		font-size: 14px;
+		font-weight: 500;
+
+		li {
+			text-transform: uppercase;
+
+			&:first-child {
+				border-right: 1px solid #e3e3e3;
+			}
+		}
+
+		a {
+			display: block;
+			padding: 20px;
 		}
 	}
 </style>
