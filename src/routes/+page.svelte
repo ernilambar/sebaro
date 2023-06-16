@@ -1,1 +1,5 @@
-<h2 class="text-2xl">About Me</h2>
+<h2>About Me</h2>
+
+<style lang="scss">
+
+</style>
