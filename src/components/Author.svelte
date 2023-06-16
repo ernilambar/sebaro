@@ -3,20 +3,16 @@
 		<div class="author-avatar">
 			<img src="./images/avatar.jpeg" alt="avatar" />
 		</div>
-
-		<div>
-			<div class="author-details">
-				<h2 class="author-name">Nilambar Sharma</h2>
-				<span class="author-position">Software Developer</span>
-			</div>
-		</div>
-
-		<div class="author-footer">
-			<ul class="author-footer-links">
-				<li><a href="/">Home</a></li>
-				<li><a href="/contact">Contact</a></li>
-			</ul>
-		</div>
+	</div>
+	<div class="author-details">
+		<h2 class="author-name">Nilambar Sharma</h2>
+		<span class="author-position">Software Developer</span>
+	</div>
+	<div class="author-footer">
+		<ul class="author-footer-links">
+			<li><a href="/">Home</a></li>
+			<li><a href="/contact">Contact</a></li>
+		</ul>
 	</div>
 </div>
 
