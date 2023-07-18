@@ -1,6 +1,6 @@
 <script>
 	import Fa from 'svelte-fa';
-	import { faHome, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+	import { faHome, faEnvelope, faFileLines } from '@fortawesome/free-solid-svg-icons';
 	import { page } from '$app/stores';
 	let path;
 
@@ -14,6 +14,11 @@
 				><Fa icon={faHome} />
 				<span>Home</span>
 			</a>
+		</li>
+		<li>
+			<a href="/resume" class={path === '/resume' ? 'active' : ''}
+				><Fa icon={faFileLines} /><span>Resume</span></a
+			>
 		</li>
 		<li>
 			<a href="/contact" class={path === '/contact' ? 'active' : ''}
