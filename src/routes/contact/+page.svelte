@@ -5,10 +5,7 @@
 
 	const schema = yup.object().shape({
 		userName: yup.string().required('Name is required'),
-		userEmail: yup
-			.string()
-			.required('Please provide your email.')
-			.email('Please enter valid email.'),
+		userEmail: yup.string().required('Email is required').email('Please enter valid email'),
 		userMessage: yup.string().required('Message is required')
 	});
 
@@ -36,7 +33,7 @@
 </script>
 
 <Box heading="Contact" heading2="Me">
-	<form on:submit|preventDefault={submitHandler}>
+	<form class="contact-form" on:submit|preventDefault={submitHandler}>
 		<div class="form-row">
 			<label for="userName">Name:</label>
 			<input
@@ -79,6 +76,10 @@
 </Box>
 
 <style>
+	.contact-form {
+		max-width: 550px;
+	}
+
 	label {
 		color: #334155;
 		display: block;
@@ -101,9 +102,10 @@
 		border: 1px solid #ddd;
 		color: #475569;
 		font-size: 1rem;
-		padding: 5px;
+		padding: 10px;
 		border-radius: 4px;
 		margin-top: 5px;
+		width: 100%;
 	}
 
 	textarea {
