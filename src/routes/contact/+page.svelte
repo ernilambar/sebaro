@@ -32,6 +32,10 @@
 	}
 </script>
 
+<svelte:head>
+	<title>Contact - Nilambar Sharma</title>
+</svelte:head>
+
 <Box heading="Contact" heading2="Me">
 	<form class="contact-form" on:submit|preventDefault={submitHandler}>
 		<div class="form-row">
