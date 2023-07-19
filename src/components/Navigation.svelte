@@ -86,10 +86,6 @@
 				&.active,
 				&:hover {
 					color: #2a65e6;
-
-					svg path {
-						fill: #2a65e6;
-					}
 				}
 			}
 		}

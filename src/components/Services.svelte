@@ -77,10 +77,6 @@
 				justify-content: center;
 				align-items: center;
 			}
-
-			svg path {
-				fill: #2a65e6;
-			}
 		}
 	}
 </style>

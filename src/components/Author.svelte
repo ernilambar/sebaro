@@ -67,22 +67,6 @@
 		border: 1px solid transparent;
 	}
 
-	.author-social-links {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		gap: 16px;
-		padding: 0;
-		margin: 24px 0 0;
-		list-style: none;
-
-		svg {
-			display: block;
-			width: 16px;
-			height: auto;
-		}
-	}
-
 	.author-footer-links {
 		display: grid;
 		grid-template-columns: repeat(2, minmax(0, 1fr));
