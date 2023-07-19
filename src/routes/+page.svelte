@@ -3,6 +3,10 @@
 	import Services from '../components/Services.svelte';
 </script>
 
+<svelte:head>
+	<title>Nilambar Sharma</title>
+</svelte:head>
+
 <Box heading="About" heading2="Me">
 	<p>
 		Hello! I am Nilambar Sharma from the beautiful country of Nepal. I am a Full Stack Web

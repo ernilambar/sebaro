@@ -82,6 +82,10 @@
 	];
 </script>
 
+<svelte:head>
+	<title>Resume - Nilambar Sharma</title>
+</svelte:head>
+
 <Box heading="My" heading2="Resume">
 	<div class="resume-row">
 		<div class="resume-column">
