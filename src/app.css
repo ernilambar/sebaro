@@ -177,11 +177,6 @@ template {
 
 body {
 	padding-block: 1px;
-	background-image: url(images/bg.jpg);
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
-	background-attachment: fixed;
 	font-family: 'Poppins', sans-serif;
 	color: #222;
 	font-weight: 400;

@@ -2,27 +2,37 @@
 	import Author from '../components/Author.svelte';
 	import Navigation from '../components/Navigation.svelte';
 	import '../app.css';
+  let src = '/images/bg.jpg';
 </script>
 
-<div class="app">
-	<div class="container">
-		<div class="container-inner">
-			<header class="site-header">
-				<Navigation />
-			</header>
+<div class="app-outer" style="background-image:url({src});">
+  <div class="app">
+    <div class="container">
+      <div class="container-inner">
+        <header class="site-header">
+          <Navigation />
+        </header>
 
-			<Author />
+        <Author />
 
-			<div class="content">
-				<div class="content-wrap">
-					<slot />
-				</div>
-			</div>
-		</div>
-	</div>
+        <div class="content">
+          <div class="content-wrap">
+            <slot />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <style lang="scss">
+  .app-outer {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+
 	.app {
 		height: 100dvh;
 	}
