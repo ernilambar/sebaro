@@ -1,67 +1,133 @@
 <script>
 	import Box from '../../components/Box.svelte';
+
+	import * as yup from 'yup';
+
+	const schema = yup.object().shape({
+		userName: yup.string().required('Name is required'),
+		userEmail: yup
+			.string()
+			.required('Please provide your email.')
+			.email('Please enter valid email.'),
+		userMessage: yup.string().required('Message is required')
+	});
+
+	let message = '';
+
+	let values = {};
+	let errors = {};
+
+	async function submitHandler() {
+		try {
+			await schema.validate(values, { abortEarly: false });
+			console.log('Good');
+			errors = {};
+			values = {};
+			message = 'Submitted successfully.';
+		} catch (err) {
+			errors = extractErrors(err);
+		}
+	}
+	function extractErrors(err) {
+		return err.inner.reduce((acc, err) => {
+			return { ...acc, [err.path]: err.message };
+		}, {});
+	}
 </script>
 
 <Box heading="Contact" heading2="Me">
-	<form
-		accept-charset="UTF-8"
-		action="https://www.formbackend.com/f/b1a2be3a2e0521ff"
-		method="POST"
-	>
-		<div>
-			<label for="name">Name:</label>
-			<input type="text" id="name" name="name" required />
+	<form on:submit|preventDefault={submitHandler}>
+		<div class="form-row">
+			<label for="userName">Name:</label>
+			<input
+				type="userName"
+				name="userName"
+				id="userName"
+				bind:value={values.userName}
+				placeholder="Name"
+			/>
+			{#if errors.userName}<span>{errors.userName}</span>{/if}
 		</div>
-
-		<div>
-			<label for="email">Email:</label>
-			<input type="email" id="email" name="email" required />
+		<div class="form-row">
+			<label for="userEmail">Email:</label>
+			<input
+				type="text"
+				name="userEmail"
+				id="userEmail"
+				bind:value={values.userEmail}
+				placeholder="Email"
+			/>
+			{#if errors.userEmail}<span>{errors.userEmail}</span>{/if}
 		</div>
-
-		<div>
-			<label for="message">Message:</label>
-			<textarea type="email" id="email" name="email" required />
+		<div class="form-row">
+			<label for="userMessage">Message:</label>
+			<textarea
+				name="userMessage"
+				id="userMessage"
+				bind:value={values.userMessage}
+				placeholder="Message"
+			/>
+			{#if errors.userMessage}<span>{errors.userMessage}</span>{/if}
 		</div>
-
-		<button type="submit">Submit</button>
+		<div>
+			<button type="submit">Submit</button>
+		</div>
 	</form>
+	{#if message}
+		<div class="message">{message}</div>
+	{/if}
 </Box>
 
 <style>
-  .fieldset + .fieldset,
-  form + form {
-    margin-top: 8px;
-  }
+	label {
+		color: #334155;
+		display: block;
+		font-weight: bold;
+	}
 
-  label {
-    font-family: Arial, Helvetica, sans-serif;
-    color: #334155;
-    display: block;
-    font-size: .8rem;
-    font-weight: bold;
-  }
+	.form-row {
+		margin-bottom: 20px;
+	}
 
-  input,
-  textarea,
-  select {
-    border: 1px solid #ddd;
-    color: #475569;
-    font-size: 1rem;
-    padding: 5px;
-    border-radius: 4px;
-    margin-bottom: 10px;
-  }
+	span {
+		display: block;
+		margin-top: 5px;
+		color: #cc0000;
+		font-weight: 0.8rem;
+	}
 
-  button[ type="submit"] {
-    background: #2a65e6;
-    border: none;
-    box-shadow: none;
-    color: white;
-    border-radius: 2px;
-    font-size: .8rem;
-    text-transform: uppercase;
-    font-weight: 500;
-    padding: 8px 12px;
-    margin-top: 16px;
-  }
+	input,
+	textarea {
+		border: 1px solid #ddd;
+		color: #475569;
+		font-size: 1rem;
+		padding: 5px;
+		border-radius: 4px;
+		margin-top: 5px;
+	}
+
+	textarea {
+		min-height: 150px;
+	}
+
+	button[type='submit'] {
+		background: #2a65e6;
+		border: none;
+		box-shadow: none;
+		color: white;
+		border-radius: 2px;
+		font-size: 0.8rem;
+		text-transform: uppercase;
+		font-weight: 500;
+		padding: 8px 12px;
+		margin-top: 16px;
+		cursor: pointer;
+	}
+
+	.message {
+		font-weight: 700;
+		margin: 15px 0;
+		color: #32a852;
+		display: block;
+	}
 </style>
